@@ -14,7 +14,6 @@ def test_log_metrics_and_params():
     with mlflow.start_run(nested=False) as active_run:
         model = tf.keras.models.Sequential([tf.keras.layers.Dense(1)])
         model.compile(optimizer="sgd", loss=tf.keras.losses.mean_squared_error)
-
         history = model.fit(x=[1, 1, 1], y=[2, 2, 2], verbose=1)
 
         log_metrics_and_params(
